@@ -1,0 +1,28 @@
+### REQUESTS POSTMAN TESTS ###
+
+• CREATE TOKEN
+URL DIRECT: http://localhost:8082/auth/oauth/token
+URL GATEWAY ZUUL: http://localhost:8080/gateway/auth/oauth/token
+Authorization: Basic Auth / Username: esales / Password: @123
+Body: x-www-form-urlencoded / username: ronnie.lopes@esales.com.br / password: @123 / grant_type: password
+
+• REFRESH TOKEN
+URL DIRECT: http://localhost:8082/auth/oauth/token
+URL GATEWAY ZUUL: http://localhost:8080/gateway/auth/oauth/token
+Authorization: Basic Auth / Username: esales / Password: @123
+Body: x-www-form-urlencoded / grant_type: password / refresh_token: (refresh_token gerado no CREATE TOKEN)
+
+• LIST ALL USER SYSTEM
+URL DIRECT: http://localhost:8082/auth/listAll
+URL GATEWAY ZUUL: http://localhost:8080/gateway/auth/listAll
+Authorization: Oauth 2.0 / Access Token: (acces_token gerado no CREATE TOKEN OU REFRESH TOKEN)
+
+• LIST ALL PRODUCT
+URL DIRECT: http://localhost:8083/product/listAll
+URL GATEWAY ZUUL: http://localhost:8080/gateway/product/listAll
+Authorization: Oauth 2.0 / Access Token: (acces_token gerado no CREATE TOKEN OU REFRESH TOKEN)
+
+
+EXTRAS:
+URL SPRING EUREKA: http://localhost:8081/registry
+
