@@ -1,0 +1,28 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /auth
+    
+spring:
+  application:
+    name: auth
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/microservices
+    username: postgres
+    password: postgresql1020
+    
+eureka:
+  instance: 
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8081/registry/eureka

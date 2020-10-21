@@ -1,0 +1,30 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /product
+    
+spring:
+  application:
+    name: product
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/microservices
+    username: postgres
+    password: postgresql1020
+    
+eureka:
+  instance: 
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8081/registry/eureka
+        
+        
