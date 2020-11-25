@@ -29,7 +29,7 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.example.rest.product.controller"))
                 .build()
-                .apiInfo(metaData())
+                .apiInfo(apiInfo())
                 .securitySchemes(Lists.newArrayList(securityScheme()))
                 .securityContexts(Lists.newArrayList(securityContext()));
     }
